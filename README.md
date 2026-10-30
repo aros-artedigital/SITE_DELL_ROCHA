@@ -1,4 +1,4 @@
-# 🎵 Dell Rocha — Portal Oficial do Compositor
+# 🎵 Dell Rocha - Portal Oficial do Compositor
 
 [![Site Status](https://img.shields.io/website-up-down-green-red/https/dellrocha.netlify.app.svg)](https://dellrocha.netlify.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
