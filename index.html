@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça as composições de Dell Rocha. Ouça os lançamentos, descubra as músicas mais tocadas e entre em contato para gravar uma composição exclusiva.">
+  <meta property="og:title" content="DELL ROCHA — Compositor">
+  <meta property="og:description" content="Conheça as composições de Dell Rocha. Ouça os lançamentos, descubra as músicas mais tocadas e entre em contato para gravar uma composição exclusiva.">
+  <meta property="og:type" content="website">
+  <title>DELL ROCHA — Compositor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================================
+       RESET & TOKENS
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0A0A50;
+      --navy-dark:   #060633;
+      --navy-mid:    #0D0D5A;
+      --blue:        #0080FF;
+      --blue-hover:  #0066CC;
+      --blue-light:  #E5F2FF;
+      --white:       #FFFFFF;
+      --gray-blue:   #5A6B8C;
+      --wa:          #25D366;
+      --wa-hover:    #1ea855;
+      --success:     #1DB954;
+      --error:       #E63946;
+      --warning:     #FFB703;
+
+      --f-head: 'Montserrat', system-ui, sans-serif;
+      --f-body: 'Inter', system-ui, sans-serif;
+
+      --sp-xs: 8px;
+      --sp-s:  16px;
+      --sp-m:  24px;
+      --sp-l:  48px;
+      --sp-xl: 88px;
+
+      --r-btn:    8px;
+      --r-cover:  12px;
+      --r-card:   16px;
+      --r-banner: 24px;
+      --r-pill:   999px;
+
+      --shadow-card:  0 4px 16px rgba(0,0,0,.25);
+      --shadow-hover: 0 8px 24px rgba(0,128,255,.30);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--f-body);
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul, ol { list-style: none; }
+    button { cursor: pointer; }
+
+    /* =========================================================
+       TYPOGRAPHY SCALE
+       ========================================================= */
+    h1 { font-family: var(--f-head); font-weight: 800; font-size: clamp(32px,5vw,56px); line-height: 1.1; }
+    h2 { font-family: var(--f-head); font-weight: 700; font-size: clamp(24px,3vw,36px); letter-spacing: 1.5px; text-transform: uppercase; }
+    h3 { font-family: var(--f-head); font-weight: 600; font-size: clamp(16px,1.8vw,20px); }
+    h4 { font-family: var(--f-head); font-weight: 500; font-size: clamp(14px,1.4vw,17px); }
+    p  { font-size: 16px; line-height: 1.6; }
+
+    /* =========================================================
+       LAYOUT
+       ========================================================= */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--sp-s); }
+    @media (min-width: 768px)  { .container { padding: 0 var(--sp-m); } }
+    @media (min-width: 1200px) { .container { padding: 0 var(--sp-l); } }
+
+    .section { padding: var(--sp-xl) 0; }
+    .section--alt { background: var(--navy-mid); }
+
+    .section-header { margin-bottom: var(--sp-l); }
+    .section-header h2 { display: flex; align-items: center; gap: var(--sp-s); }
+    .section-header h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.2em;
+      background: var(--blue);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-sub {
+      color: var(--gray-blue);
+      margin-top: var(--sp-xs);
+      font-size: 16px;
+    }
+
+    /* =========================================================
+       BUTTONS
+       ========================================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-xs);
+      padding: 14px 32px;
+      border-radius: var(--r-btn);
+      font-family: var(--f-head);
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      border: none;
+      transition: background .2s, box-shadow .2s, transform .15s;
+      min-height: 44px;
+      min-width: 44px;
+      white-space: nowrap;
+    }
+    .btn:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+
+    .btn--primary  { background: var(--blue); color: var(--white); }
+    .btn--primary:hover  { background: var(--blue-hover); box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+
+    .btn--secondary { background: transparent; border: 2px solid var(--blue); color: var(--white); }
+    .btn--secondary:hover { background: var(--blue); }
+
+    .btn--wa { background: var(--wa); color: var(--white); }
+    .btn--wa:hover { background: var(--wa-hover); box-shadow: 0 8px 24px rgba(37,211,102,.35); transform: translateY(-1px); }
+
+    /* =========================================================
+       SKIP LINK
+       ========================================================= */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 1000;
+      background: var(--blue);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: var(--r-btn);
+      font-family: var(--f-head);
+      font-weight: 600;
+      font-size: 14px;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 16px; outline: 2px solid var(--white); outline-offset: 2px; }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(6,6,51,.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,128,255,.12);
+      transition: background .3s;
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .header__logo { display: flex; flex-direction: column; gap: 1px; }
+    .header__logo-name {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+    .header__logo-slogan {
+      font-family: var(--f-body);
+      font-size: 11px;
+      color: var(--blue);
+      letter-spacing: .5px;
+      font-style: italic;
+    }
+
+    /* Desktop nav */
+    .nav { display: none; }
+    @media (min-width: 1024px) { .nav { display: flex; align-items: center; gap: 2px; } }
+
+    .nav__link {
+      font-family: var(--f-head);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.8);
+      padding: 10px 12px;
+      border-radius: var(--r-btn);
+      transition: color .2s, background .2s;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    .nav__link:hover { color: var(--white); background: rgba(0,128,255,.1); }
+    .nav__link:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    .nav__link--cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      margin-left: 4px;
+    }
+    .nav__link--cta:hover { background: var(--blue-hover) !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 10px;
+      min-height: 44px;
+      min-width: 44px;
+      align-items: center;
+      margin-right: 8px;
+    }
+    @media (min-width: 1024px) { .hamburger { display: none; } }
+
+    .hamburger__line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+    .hamburger[aria-expanded="true"] .hamburger__line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] .hamburger__line:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] .hamburger__line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav */
+    .nav-mobile {
+      display: none;
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(0,128,255,.12);
+    }
+    .nav-mobile.is-open { display: block; }
+    .nav-mobile__link {
+      display: block;
+      padding: 15px var(--sp-s);
+      font-family: var(--f-head);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: rgba(255,255,255,.85);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      transition: color .2s, background .2s, padding-left .2s;
+    }
+    .nav-mobile__link:hover { color: var(--white); background: rgba(0,128,255,.08); padding-left: 24px; }
+    .nav-mobile__link:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+    .nav-mobile__link--cta { color: var(--wa) !important; }
+
+    /* =========================================================
+       HERO SLIDER
+       ========================================================= */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 520px;
+      overflow: hidden;
+      padding-top: 68px;
+    }
+
+    .slider { position: relative; width: 100%; height: 100%; }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transition: opacity .9s ease;
+      pointer-events: none;
+    }
+    .slide.is-active { opacity: 1; pointer-events: auto; }
+
+    .slide__bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    /* Slide 1 — Show / palco com luzes e multidão */
+    .slide__bg--1 {
+      background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80');
+      background-color: #0A0A50;
+      filter: brightness(.55);
+    }
+    /* Slide 2 — Composição / guitarra e instrumentos */
+    .slide__bg--2 {
+      background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1600&q=80');
+      background-color: #060633;
+      filter: brightness(.55);
+    }
+    /* Slide 3 — Banda / performance ao vivo */
+    .slide__bg--3 {
+      background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1600&q=80');
+      background-color: #0A0A50;
+      filter: brightness(.50);
+    }
+    /* Slide 4 — Estúdio / produção musical */
+    .slide__bg--4 {
+      background-image: url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1600&q=80');
+      background-color: #060633;
+      filter: brightness(.55);
+    }
+
+    .slide__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right,rgba(6,6,51,.85) 0%,rgba(6,6,51,.45) 55%,transparent 100%);
+    }
+
+    .slide__content {
+      position: relative;
+      z-index: 1;
+      padding: 0 var(--sp-s);
+      max-width: 680px;
+    }
+    @media (min-width: 768px) { .slide__content { padding: 0 var(--sp-l); } }
+
+    .slide__badge {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      font-family: var(--f-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: var(--r-pill);
+      margin-bottom: var(--sp-s);
+    }
+
+    .slide__title {
+      font-family: var(--f-head);
+      font-size: clamp(26px,4.5vw,50px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: var(--sp-m);
+      text-shadow: 0 2px 20px rgba(0,0,0,.5);
+    }
+    .slide__title em { font-style: normal; color: var(--blue); }
+
+    /* Slider arrows */
+    .slider__arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: rgba(0,128,255,.18);
+      border: 2px solid rgba(0,128,255,.35);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, border-color .2s;
+    }
+    .slider__arrow:hover { background: var(--blue); border-color: var(--blue); }
+    .slider__arrow:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+    .slider__arrow--prev { left: 16px; }
+    .slider__arrow--next { right: 16px; }
+    @media (max-width: 479px) { .slider__arrow { display: none; } }
+
+    /* Slider dots */
+    .slider__dots {
+      position: absolute;
+      bottom: var(--sp-l);
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .slider__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: var(--r-pill);
+      background: rgba(255,255,255,.35);
+      border: none;
+      padding: 0;
+      min-height: 20px;
+      min-width: 20px;
+      position: relative;
+      transition: background .3s;
+    }
+    .slider__dot::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: var(--r-pill);
+      background: rgba(255,255,255,.35);
+      transition: width .3s, background .3s;
+    }
+    .slider__dot.is-active::after { width: 26px; background: var(--blue); }
+    .slider__dot:hover::after { background: rgba(255,255,255,.7); }
+    .slider__dot:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    /* =========================================================
+       CARDS GRID
+       ========================================================= */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-m);
+    }
+    @media (min-width: 768px)  { .cards-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (min-width: 1024px) { .cards-grid { grid-template-columns: repeat(4,1fr); } }
+
+    .music-card {
+      background: rgba(255,255,255,.05);
+      border-radius: var(--r-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .music-card:hover,
+    .music-card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0,128,255,.25);
+    }
+    .music-card:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    .music-card__cover {
+      position: relative;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      border-radius: var(--r-cover) var(--r-cover) 0 0;
+    }
+
+    .cover-ph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--f-head);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      padding: 10px;
+      transition: transform .3s;
+    }
+    .music-card:hover .cover-ph { transform: scale(1.05); }
+
+    .cover-ph--a { background: linear-gradient(145deg,#002A70,#0080FF); }
+    .cover-ph--b { background: linear-gradient(145deg,#0A0A50,#0058B8); }
+    .cover-ph--c { background: linear-gradient(145deg,#001040,#0048A0); }
+    .cover-ph--d { background: linear-gradient(145deg,#0D1A60,#0080FF); }
+    .cover-ph--e { background: linear-gradient(145deg,#060633,#004898); }
+    .cover-ph--f { background: linear-gradient(145deg,#0D0D5A,#0068C8); }
+    .cover-ph--g { background: linear-gradient(145deg,#000838,#003070); }
+    .cover-ph--h { background: linear-gradient(145deg,#0A0A50,#0090FF); }
+
+    .card-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.3);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .music-card:hover .card-play-overlay,
+    .music-card:focus-within .card-play-overlay { opacity: 1; }
+
+    .play-btn {
+      width: 52px;
+      height: 52px;
+      background: var(--blue);
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: transform .2s, background .2s;
+    }
+    .play-btn:hover { transform: scale(1.12); background: var(--blue-hover); }
+    .play-btn:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+
+    .music-card__body { padding: var(--sp-s); }
+
+    .card-title {
+      font-family: var(--f-head);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--white);
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-meta {
+      font-size: 13px;
+      color: var(--gray-blue);
+      margin-bottom: var(--sp-xs);
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--navy);
+      font-family: var(--f-head);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--r-pill);
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+    .about { background: var(--navy-dark); }
+
+    .about__inner {
+      display: grid;
+      gap: var(--sp-l);
+      align-items: center;
+    }
+    @media (min-width: 768px) { .about__inner { grid-template-columns: auto 1fr; } }
+
+    .about__avatar {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,var(--blue),var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 60px;
+      color: var(--white);
+      border: 4px solid var(--blue);
+      box-shadow: 0 0 40px rgba(0,128,255,.3);
+      margin: 0 auto;
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px) { .about__avatar { width: 260px; height: 260px; margin: 0; } }
+
+    .about__text h2 { margin-bottom: var(--sp-m); letter-spacing: 1px; }
+    .about__text p { color: rgba(255,255,255,.87); font-size: 17px; max-width: 62ch; }
+    .about__text p + p { margin-top: var(--sp-s); }
+
+    /* =========================================================
+       LANÇAMENTOS (list layout)
+       ========================================================= */
+    .lancamentos-list { display: flex; flex-direction: column; gap: var(--sp-s); }
+
+    .lanc-item {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-s);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--r-card);
+      padding: var(--sp-s);
+      border: 1px solid transparent;
+      transition: background .2s, border-color .2s, transform .2s;
+      cursor: pointer;
+    }
+    .lanc-item:hover,
+    .lanc-item:focus-within {
+      background: rgba(0,128,255,.08);
+      border-color: rgba(0,128,255,.28);
+      transform: translateX(4px);
+    }
+    .lanc-item:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    .lanc-num {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 28px;
+      color: rgba(0,128,255,.2);
+      width: 44px;
+      text-align: center;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .lanc-cover {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--r-cover);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lanc-info { flex: 1; min-width: 0; }
+    .lanc-title {
+      font-family: var(--f-head);
+      font-weight: 600;
+      font-size: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .lanc-meta { font-size: 13px; color: var(--gray-blue); }
+
+    .lanc-play {
+      width: 40px;
+      height: 40px;
+      background: rgba(0,128,255,.15);
+      border: 1px solid rgba(0,128,255,.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      transition: background .2s, color .2s, border-color .2s;
+      flex-shrink: 0;
+    }
+    .lanc-item:hover .lanc-play { background: var(--blue); color: var(--white); border-color: var(--blue); }
+    .lanc-play:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    /* =========================================================
+       RITMOS — PARALAXE (CSS nativo, background-attachment: fixed)
+       ========================================================= */
+    .ritmos {
+      position: relative;
+      /* Camada 1: overlay navy escuro | Camada 2: foto com parallax */
+      background-image:
+        linear-gradient(rgba(6,6,51,.72), rgba(4,4,40,.72)),
+        url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1600&q=80');
+      background-size:   auto, cover;
+      background-position: center, center;
+      /* overlay rola normalmente; foto fica fixa no viewport = paralaxe */
+      background-attachment: scroll, fixed;
+      background-color: #060633;
+      /* Seção mais alta para a paralaxe ser visível ao rolar */
+      padding: 120px 0;
+    }
+    /* Mobile: fixed attachment não funciona no iOS → fallback scroll */
+    @media (max-width: 767px) {
+      .ritmos {
+        background-attachment: scroll, scroll;
+        padding: 64px 0;
+      }
+    }
+
+    .ritmos__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-s);
+      margin-top: var(--sp-l);
+    }
+    .ritmo-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 28px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.28);
+      color: var(--white);
+      border-radius: var(--r-pill);
+      font-family: var(--f-head);
+      font-weight: 600;
+      font-size: 15px;
+      transition: background .2s, border-color .2s, box-shadow .2s;
+      min-height: 44px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .ritmo-pill:hover { background: var(--blue); border-color: var(--blue); box-shadow: var(--shadow-hover); }
+    .ritmo-pill:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+    /* =========================================================
+       CTA SECTION
+       ========================================================= */
+    .cta-block {
+      background: linear-gradient(140deg,#0A0A50 0%,#002E80 100%);
+      text-align: center;
+      padding: var(--sp-xl) 0;
+    }
+    .cta-block .container {
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cta-block h2 {
+      font-size: clamp(26px,4vw,44px);
+      line-height: 1.2;
+      margin-bottom: var(--sp-m);
+    }
+    .cta-block p {
+      color: rgba(255,255,255,.87);
+      font-size: 17px;
+      margin: 0 auto var(--sp-l);
+      max-width: 65ch;
+    }
+    .cta-block .btn {
+      max-width: calc(100% - 32px);
+      white-space: normal;
+      text-align: center;
+    }
+
+    /* =========================================================
+       BACK TO TOP
+       ========================================================= */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 190;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.2);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .3s, transform .3s, background .2s, border-color .2s;
+      pointer-events: none;
+    }
+    .back-to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .back-to-top:hover { background: var(--blue); border-color: var(--blue); box-shadow: var(--shadow-hover); }
+    .back-to-top:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+    /* =========================================================
+       SPEED DIAL (SOCIAL)
+       ========================================================= */
+    .speed-dial {
+      position: fixed;
+      bottom: 88px;
+      right: 24px;
+      z-index: 190;
+      /* largura = toggle, painel é absoluto */
+    }
+
+    .speed-dial__panel {
+      position: absolute;
+      bottom: calc(100% + 12px);
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.13);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 40px;
+      padding: 14px 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.2);
+      opacity: 0;
+      transform: translateY(14px) scale(.9);
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      transform-origin: bottom center;
+    }
+    .speed-dial__panel.is-open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+      flex-shrink: 0;
+    }
+    .social-btn:hover { transform: scale(1.12); box-shadow: 0 4px 16px rgba(0,0,0,.35); }
+    .social-btn:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+
+    .social-btn--wa { background: #25D366; }
+    .social-btn--ig { background: linear-gradient(135deg,#833ab4 0%,#fd1d1d 55%,#fcb045 100%); }
+    .social-btn--yt { background: #FF0000; }
+    .social-btn--fb { background: #1877F2; }
+
+    .speed-dial__toggle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.22);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      transition: background .25s, border-color .25s, transform .25s;
+    }
+    .speed-dial__toggle:hover { background: rgba(255,255,255,.22); }
+    .speed-dial__toggle.is-open {
+      background: rgba(210,45,45,.72);
+      border-color: rgba(210,45,45,.4);
+      transform: rotate(45deg);
+    }
+    .speed-dial__toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+    .sd-icon-open  { display: block; }
+    .sd-icon-close { display: none; }
+    .speed-dial__toggle.is-open .sd-icon-open  { display: none; }
+    .speed-dial__toggle.is-open .sd-icon-close { display: block; }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .footer {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(0,128,255,.12);
+      padding: var(--sp-l) 0 var(--sp-m);
+    }
+    .footer__grid {
+      display: grid;
+      gap: var(--sp-l);
+    }
+    @media (min-width: 768px) { .footer__grid { grid-template-columns: 2fr 1fr 1fr; } }
+
+    .footer__brand-name {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+    .footer__brand-slogan { color: var(--blue); font-style: italic; font-size: 15px; margin: 4px 0 var(--sp-s); }
+    .footer__brand-desc { color: var(--gray-blue); font-size: 14px; max-width: 38ch; }
+
+    .footer__col-title {
+      font-family: var(--f-head);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: var(--sp-s);
+    }
+    .footer__links { display: flex; flex-direction: column; gap: 10px; }
+    .footer__link {
+      font-size: 14px;
+      color: rgba(255,255,255,.65);
+      transition: color .2s;
+      min-height: 28px;
+      display: flex;
+      align-items: center;
+    }
+    .footer__link:hover { color: var(--white); }
+    .footer__link:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 2px; }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,.07);
+      margin-top: var(--sp-l);
+      padding-top: var(--sp-m);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-xs);
+    }
+    @media (min-width: 768px) { .footer__bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+
+    .footer__copy { font-size: 13px; color: var(--gray-blue); }
+    .footer__dev { font-size: 13px; color: var(--gray-blue); }
+    .footer__dev a { color: var(--blue); }
+    .footer__dev a:hover { text-decoration: underline; }
+
+    /* =========================================================
+       SLIDE DECORATION (ilustração flutuante)
+       ========================================================= */
+    /* Deco SVG ocultado — substituído por fotos reais */
+    .slide__deco { display: none; }
+
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* =========================================================
+       FLUTUANTES — AJUSTE MOBILE
+       ========================================================= */
+    @media (max-width: 767px) {
+      .back-to-top {
+        right: 36px;
+        bottom: 24px;
+        width: 47px;
+        height: 47px;
+      }
+      .speed-dial {
+        right: 36px;
+        bottom: 87px; /* 24 + 47 + 16 gap */
+      }
+      .speed-dial__toggle {
+        width: 47px;
+        height: 47px;
+      }
+      .social-btn {
+        width: 40px;
+        height: 40px;
+      }
+      /* Centraliza o painel horizontalmente em relação ao toggle */
+      .speed-dial__panel {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%) translateY(14px) scale(.9);
+      }
+      .speed-dial__panel.is-open {
+        transform: translateX(-50%) translateY(0) scale(1);
+      }
+    }
+
+    /* =========================================================
+       FOCUS GLOBAL
+       ========================================================= */
+    :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+    /* =========================================================
+       RESPONSIVIDADE — CORREÇÕES UX
+       ========================================================= */
+
+    /* Offset para links âncora com header fixo */
+    section[id] { scroll-margin-top: 76px; }
+
+    /* ── Smartphone (< 768px) ────────────────────────────── */
+    @media (max-width: 767px) {
+
+      /* Seções: padding vertical menor */
+      .section    { padding: 48px 0; }
+      .cta-block  { padding: 48px 0; }
+      .footer     { padding: var(--sp-m) 0; }
+
+      /* Section header */
+      .section-header { margin-bottom: var(--sp-m); }
+      .section-sub    { font-size: 14px; }
+
+      /* Hero: altura mínima menor em telas compactas */
+      .hero { min-height: 460px; }
+
+      /* Slide: sem padding duplo (container já tem 16px) */
+      .slide__content { padding: 0; }
+
+      /* Overlay: direção top→bottom no mobile para expor mais da foto */
+      .slide__overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(6,6,51,.88) 0%,
+          rgba(6,6,51,.65) 55%,
+          rgba(6,6,51,.35) 100%
+        );
+      }
+      /* Enquadramento ideal de cada foto no retrato mobile */
+      .slide__bg--1 { background-position: 68% center; }   /* foca no centro do palco */
+      .slide__bg--2 { background-position: center 35%; }   /* foca nos instrumentos */
+      .slide__bg--3 { background-position: 58% center; }   /* foca na performance */
+      .slide__bg--4 { background-position: center 28%; }   /* foca no estúdio */
+
+      /* About */
+      .about__text p { font-size: 16px; }
+
+      /* Cards: 1 coluna no celular */
+      .cards-grid       { grid-template-columns: 1fr; }
+      .music-card__body { padding: 12px; }
+      .card-title       { font-size: 13px; }
+      .card-meta        { font-size: 12px; }
+
+      /* Lançamentos */
+      .lanc-item        { padding: 12px; gap: 10px; }
+      .lanc-cover       { width: 48px; height: 48px; }
+      .lanc-num         { width: 36px; font-size: 22px; }
+      .lanc-play        { width: 36px; height: 36px; }
+      .lanc-title       { font-size: 14px; }
+      .lanc-meta        { font-size: 12px; }
+
+      /* Ritmos */
+      .ritmo-pill { font-size: 14px; padding: 10px 22px; }
+
+      /* CTA */
+      .cta-block h2 { font-size: clamp(22px, 5.5vw, 36px); }
+      .cta-block p  { font-size: 16px; margin-bottom: var(--sp-m); }
+
+      /* Footer */
+      .footer__grid     { gap: var(--sp-m); }
+      .footer__bottom   { margin-top: var(--sp-m); }
+      .footer__copy,
+      .footer__dev      { font-size: 12px; }
+    }
+
+    /* ── Muito pequeno (< 480px) ─────────────────────────── */
+    @media (max-width: 479px) {
+
+      /* Cards: gap menor para aproveitar tela estreita */
+      .cards-grid { gap: var(--sp-s); }
+
+      /* Lançamentos: oculta número e tag para mais espaço ao título */
+      .lanc-num         { display: none; }
+      .lanc-item .tag   { display: none; }
+
+      /* Slide: título menor em telas muito estreitas */
+      .slide__title  { font-size: clamp(20px, 5.8vw, 28px); margin-bottom: var(--sp-s); }
+      .slide__badge  { font-size: 10px; letter-spacing: 1.5px; padding: 4px 12px; }
+
+      /* About: avatar menor */
+      .about__avatar { width: 180px; height: 180px; font-size: 46px; }
+
+      /* CTA: padding lateral confortável */
+      .cta-block .container { padding: 0 var(--sp-s); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Acessibilidade: pular para conteúdo -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- =====================================================
+       VOLTAR AO TOPO
+       ===================================================== -->
+  <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo da página">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- =====================================================
+       SPEED DIAL — REDES SOCIAIS
+       ===================================================== -->
+  <div class="speed-dial" id="speed-dial">
+    <div class="speed-dial__panel" id="speed-dial-panel" aria-hidden="true">
+
+      <a href="[link do WhatsApp]" class="social-btn social-btn--wa"
+         aria-label="WhatsApp de Dell Rocha" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+
+      <a href="[link do Instagram]" class="social-btn social-btn--ig"
+         aria-label="Instagram de Dell Rocha" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+
+      <a href="[link do YouTube]" class="social-btn social-btn--yt"
+         aria-label="YouTube de Dell Rocha" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+        </svg>
+      </a>
+
+      <a href="[link do Facebook]" class="social-btn social-btn--fb"
+         aria-label="Facebook de Dell Rocha" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+
+    </div>
+
+    <button class="speed-dial__toggle" id="speed-dial-toggle"
+            aria-expanded="false" aria-controls="speed-dial-panel"
+            aria-label="Abrir redes sociais">
+      <svg class="sd-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+      </svg>
+      <svg class="sd-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#home" class="header__logo" aria-label="Dell Rocha — Compositor, voltar ao início">
+          <span class="header__logo-name">Dell Rocha</span>
+          <span class="header__logo-slogan">A música nasce aqui.</span>
+        </a>
+
+        <nav class="nav" role="navigation" aria-label="Navegação principal">
+          <a href="#home"          class="nav__link">HOME</a>
+          <a href="#composicoes"  class="nav__link">COMPOSIÇÕES</a>
+          <a href="#destaques"    class="nav__link">DESTAQUES</a>
+          <a href="#mais-ouvidas" class="nav__link">MAIS OUVIDAS</a>
+          <a href="#lancamentos"  class="nav__link">LANÇAMENTOS</a>
+          <a href="#gravadas"     class="nav__link">GRAVADAS POR ARTISTAS</a>
+          <a href="#fale"         class="nav__link nav__link--cta">FALE COM DELL</a>
+        </nav>
+
+        <button class="hamburger"
+                aria-expanded="false"
+                aria-controls="nav-mobile"
+                aria-label="Abrir menu de navegação">
+          <span class="hamburger__line" aria-hidden="true"></span>
+          <span class="hamburger__line" aria-hidden="true"></span>
+          <span class="hamburger__line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="nav-mobile" class="nav-mobile" role="navigation" aria-label="Menu mobile">
+      <ul role="list">
+        <li><a href="#home"          class="nav-mobile__link">HOME</a></li>
+        <li><a href="#composicoes"  class="nav-mobile__link">COMPOSIÇÕES</a></li>
+        <li><a href="#destaques"    class="nav-mobile__link">DESTAQUES</a></li>
+        <li><a href="#mais-ouvidas" class="nav-mobile__link">MAIS OUVIDAS</a></li>
+        <li><a href="#lancamentos"  class="nav-mobile__link">LANÇAMENTOS</a></li>
+        <li><a href="#gravadas"     class="nav-mobile__link">GRAVADAS POR ARTISTAS</a></li>
+        <li><a href="#fale"         class="nav-mobile__link nav-mobile__link--cta">FALE COM DELL</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+  <main id="main-content">
+
+    <!-- ── HERO SLIDER ────────────────────────────────── -->
+    <section id="home" class="hero" aria-label="Destaques em destaque">
+      <div class="slider"
+           role="region"
+           aria-label="Slider de destaques"
+           aria-roledescription="carrossel">
+
+        <!-- Slide 1 -->
+        <div class="slide is-active"
+             role="group"
+             aria-roledescription="slide"
+             aria-label="1 de 4">
+          <div class="slide__bg slide__bg--1" aria-hidden="true"></div>
+          <div class="slide__overlay" aria-hidden="true"></div>
+          <div class="container">
+            <div class="slide__content">
+              <span class="slide__badge">Novo Lançamento</span>
+              <h1 class="slide__title">
+                NOVO LANÇAMENTO — <em>[Nome da música]</em> (2026).<br>Ouça agora.
+              </h1>
+              <a href="#lancamentos" class="btn btn--primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                Ouça agora
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide"
+             role="group"
+             aria-roledescription="slide"
+             aria-label="2 de 4">
+          <div class="slide__bg slide__bg--2" aria-hidden="true"></div>
+          <div class="slide__overlay" aria-hidden="true"></div>
+          <div class="container">
+            <div class="slide__content">
+              <span class="slide__badge">Em Alta</span>
+              <h1 class="slide__title">
+                A composição que está tocando em todo lugar: <em>[Nome da música]</em>.
+              </h1>
+              <a href="#mais-ouvidas" class="btn btn--primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                Ouça agora
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide"
+             role="group"
+             aria-roledescription="slide"
+             aria-label="3 de 4">
+          <div class="slide__bg slide__bg--3" aria-hidden="true"></div>
+          <div class="slide__overlay" aria-hidden="true"></div>
+          <div class="container">
+            <div class="slide__content">
+              <span class="slide__badge">Gravada por Artista</span>
+              <h1 class="slide__title">
+                <em>[Nome do artista]</em> gravou <em>[Nome da música]</em>, de Dell Rocha. Confira.
+              </h1>
+              <a href="#gravadas" class="btn btn--primary">
+                Confira
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide"
+             role="group"
+             aria-roledescription="slide"
+             aria-label="4 de 4">
+          <div class="slide__bg slide__bg--4" aria-hidden="true"></div>
+          <div class="slide__overlay" aria-hidden="true"></div>
+          <div class="container">
+            <div class="slide__content">
+              <span class="slide__badge">Para artistas e produtores</span>
+              <h1 class="slide__title">
+                Procurando uma música inédita para o seu projeto? <em>Fale com Dell.</em>
+              </h1>
+              <a href="#fale" class="btn btn--wa">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Fale com Dell
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Setas -->
+        <button class="slider__arrow slider__arrow--prev" aria-label="Slide anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="slider__arrow slider__arrow--next" aria-label="Próximo slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="slider__dots" role="tablist" aria-label="Navegar entre slides">
+          <button class="slider__dot is-active" role="tab" aria-selected="true"  aria-label="Slide 1"></button>
+          <button class="slider__dot"           role="tab" aria-selected="false" aria-label="Slide 2"></button>
+          <button class="slider__dot"           role="tab" aria-selected="false" aria-label="Slide 3"></button>
+          <button class="slider__dot"           role="tab" aria-selected="false" aria-label="Slide 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── QUEM É DELL ROCHA ─────────────────────────── -->
+    <section id="composicoes" class="section about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__avatar" role="img" aria-label="Retrato de Dell Rocha">DR</div>
+          <div class="about__text reveal">
+            <h2 id="about-heading">Quem é Dell Rocha</h2>
+            <p>Dell Rocha é compositor [da cidade/região], com músicas nos ritmos de [arrocha, seresta, forró, piseiro — ajustar conforme o caso]. Suas letras falam de amor, sofrência e da vida real — do jeito que o público gosta de ouvir e cantar junto.</p>
+            <p>Aqui no site você encontra as composições dele para ouvir, acompanhar os lançamentos e conhecer as músicas que já foram gravadas por outros artistas. Se você é cantor, banda ou produtor e procura uma música inédita, fale direto com Dell pelo WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MAIS OUVIDAS ──────────────────────────────── -->
+    <section id="mais-ouvidas" class="section" aria-labelledby="mais-ouvidas-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <h2 id="mais-ouvidas-heading">Mais Ouvidas</h2>
+          <p class="section-sub">As composições de Dell Rocha que o público mais escuta.</p>
+        </header>
+        <div class="cards-grid">
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome da música], Dell Rocha">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--a" aria-hidden="true">[Nome da música]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">Dell Rocha · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome da música], Dell Rocha">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--b" aria-hidden="true">[Nome da música]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">Dell Rocha · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome da música], Dell Rocha">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--c" aria-hidden="true">[Nome da música]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">Dell Rocha · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome da música], Dell Rocha">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--d" aria-hidden="true">[Nome da música]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">Dell Rocha · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ESTOURADAS ────────────────────────────────── -->
+    <section id="destaques" class="section section--alt" aria-labelledby="estouradas-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <h2 id="estouradas-heading">Estouradas</h2>
+          <p class="section-sub">As músicas de Dell Rocha que caíram na boca do povo.</p>
+        </header>
+        <div class="cards-grid">
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome da música] gravada por [Nome do artista]">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--e" aria-hidden="true">[Nome da música]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">Gravada por [Nome do artista] · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome da música] gravada por [Nome do artista]">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--f" aria-hidden="true">[Nome da música]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">Gravada por [Nome do artista] · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome da música] gravada por [Nome do artista]">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--g" aria-hidden="true">[Nome da música]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">Gravada por [Nome do artista] · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome da música] gravada por [Nome do artista]">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--h" aria-hidden="true">[Nome da música]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">Gravada por [Nome do artista] · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LANÇAMENTOS ───────────────────────────────── -->
+    <section id="lancamentos" class="section" aria-labelledby="lanc-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <h2 id="lanc-heading">Lançamentos</h2>
+          <p class="section-sub">Composições novas, fresquinhas do estúdio. Ouça antes de todo mundo.</p>
+        </header>
+        <div class="lancamentos-list">
+
+          <div class="lanc-item reveal" tabindex="0" role="article" aria-label="[Nome da música] — Dell Rocha">
+            <span class="lanc-num" aria-hidden="true">01</span>
+            <div class="lanc-cover">
+              <div class="cover-ph cover-ph--a" style="font-size:9px" aria-hidden="true">[Capa]</div>
+            </div>
+            <div class="lanc-info">
+              <div class="lanc-title">[Nome da música]</div>
+              <div class="lanc-meta">Dell Rocha · (mês/ano)</div>
+            </div>
+            <span class="tag">[Ritmo]</span>
+            <button class="lanc-play" aria-label="Ouvir [Nome da música]">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <div class="lanc-item reveal" tabindex="0" role="article" aria-label="[Nome da música] — Dell Rocha">
+            <span class="lanc-num" aria-hidden="true">02</span>
+            <div class="lanc-cover">
+              <div class="cover-ph cover-ph--c" style="font-size:9px" aria-hidden="true">[Capa]</div>
+            </div>
+            <div class="lanc-info">
+              <div class="lanc-title">[Nome da música]</div>
+              <div class="lanc-meta">Dell Rocha · (mês/ano)</div>
+            </div>
+            <span class="tag">[Ritmo]</span>
+            <button class="lanc-play" aria-label="Ouvir [Nome da música]">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <div class="lanc-item reveal" tabindex="0" role="article" aria-label="[Nome da música] — Dell Rocha">
+            <span class="lanc-num" aria-hidden="true">03</span>
+            <div class="lanc-cover">
+              <div class="cover-ph cover-ph--e" style="font-size:9px" aria-hidden="true">[Capa]</div>
+            </div>
+            <div class="lanc-info">
+              <div class="lanc-title">[Nome da música]</div>
+              <div class="lanc-meta">Dell Rocha · (mês/ano)</div>
+            </div>
+            <span class="tag">[Ritmo]</span>
+            <button class="lanc-play" aria-label="Ouvir [Nome da música]">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <div class="lanc-item reveal" tabindex="0" role="article" aria-label="[Nome da música] — Dell Rocha">
+            <span class="lanc-num" aria-hidden="true">04</span>
+            <div class="lanc-cover">
+              <div class="cover-ph cover-ph--g" style="font-size:9px" aria-hidden="true">[Capa]</div>
+            </div>
+            <div class="lanc-info">
+              <div class="lanc-title">[Nome da música]</div>
+              <div class="lanc-meta">Dell Rocha · (mês/ano)</div>
+            </div>
+            <span class="tag">[Ritmo]</span>
+            <button class="lanc-play" aria-label="Ouvir [Nome da música]">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GRAVADAS POR ARTISTAS ─────────────────────── -->
+    <section id="gravadas" class="section section--alt" aria-labelledby="gravadas-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <h2 id="gravadas-heading">Gravadas por Artistas</h2>
+          <p class="section-sub">Músicas de Dell Rocha na voz de quem confiou no trabalho dele.</p>
+        </header>
+        <div class="cards-grid">
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome do artista] gravou [Nome da música]">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--b" aria-hidden="true">[Nome do artista]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música] na voz de [Nome do artista]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">[Nome do artista] · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome do artista] gravou [Nome da música]">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--d" aria-hidden="true">[Nome do artista]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música] na voz de [Nome do artista]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">[Nome do artista] · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome do artista] gravou [Nome da música]">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--f" aria-hidden="true">[Nome do artista]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música] na voz de [Nome do artista]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">[Nome do artista] · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+          <article class="music-card reveal" tabindex="0" aria-label="[Nome do artista] gravou [Nome da música]">
+            <div class="music-card__cover">
+              <div class="cover-ph cover-ph--h" aria-hidden="true">[Nome do artista]</div>
+              <div class="card-play-overlay" aria-hidden="true">
+                <button class="play-btn" tabindex="-1" aria-label="Ouvir [Nome da música] na voz de [Nome do artista]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="music-card__body">
+              <h3 class="card-title">[Nome da música]</h3>
+              <p class="card-meta">[Nome do artista] · (ano)</p>
+              <span class="tag">[Ritmo]</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RITMOS ─────────────────────────────────────── -->
+    <section id="ritmos" class="section ritmos" aria-labelledby="ritmos-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <h2 id="ritmos-heading">Ritmos</h2>
+        </header>
+        <div class="ritmos__grid reveal" role="list" aria-label="Ritmos das composições de Dell Rocha">
+          <a href="#mais-ouvidas" class="ritmo-pill" role="listitem">Arrocha</a>
+          <a href="#mais-ouvidas" class="ritmo-pill" role="listitem">Seresta</a>
+          <a href="#mais-ouvidas" class="ritmo-pill" role="listitem">Forró</a>
+          <a href="#mais-ouvidas" class="ritmo-pill" role="listitem">Piseiro</a>
+          <a href="#mais-ouvidas" class="ritmo-pill" role="listitem">Brega</a>
+          <a href="#mais-ouvidas" class="ritmo-pill" role="listitem">Sofrência</a>
+          <a href="#mais-ouvidas" class="ritmo-pill" role="listitem">Outros</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── QUER GRAVAR / FALE COM DELL ───────────────── -->
+    <section id="fale" class="cta-block" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading" class="reveal">Quer gravar uma música do Dell Rocha?</h2>
+        <p class="reveal">
+          Se você é cantor, banda ou produtor musical e está procurando uma composição inédita para o seu próximo lançamento, chegou ao lugar certo. Dell Rocha tem músicas prontas em vários ritmos e também compõe sob encomenda, do jeito que o seu projeto precisa.
+        </p>
+        <a href="[link do WhatsApp]"
+           class="btn btn--wa reveal"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Falar com Dell Rocha no WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          FALAR COM DELL NO WHATSAPP
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div>
+          <div class="footer__brand-name">Dell Rocha</div>
+          <div class="footer__brand-slogan">A música nasce aqui.</div>
+          <p class="footer__brand-desc">Compositor [da cidade/região]. Músicas de amor, sofrência e da vida real.</p>
+        </div>
+
+        <nav aria-label="Links do rodapé">
+          <div class="footer__col-title">Navegação</div>
+          <ul class="footer__links">
+            <li><a href="#home"          class="footer__link">Home</a></li>
+            <li><a href="#mais-ouvidas"  class="footer__link">Mais Ouvidas</a></li>
+            <li><a href="#destaques"     class="footer__link">Estouradas</a></li>
+            <li><a href="#lancamentos"   class="footer__link">Lançamentos</a></li>
+            <li><a href="#gravadas"      class="footer__link">Gravadas por Artistas</a></li>
+            <li><a href="#ritmos"        class="footer__link">Ritmos</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer__col-title">Contato</div>
+          <ul class="footer__links">
+            <li>
+              <a href="[link do WhatsApp]"
+                 class="footer__link"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Fale com Dell pelo WhatsApp">
+                Fale com Dell: [WhatsApp]
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          © DELL ROCHA / 2026 — Todos os direitos reservados. As composições deste site são protegidas por direitos autorais. Não copie, não regrave sem autorização.
+        </p>
+        <p class="footer__dev">
+          Site desenvolvido por <a href="#">[nome da sua empresa]</a> — Faça o seu também.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+  <script>
+    'use strict';
+
+    /* ── SLIDER ─────────────────────────────────────────── */
+    (function () {
+      var slides  = document.querySelectorAll('.slide');
+      var dots    = document.querySelectorAll('.slider__dot');
+      var prev    = document.querySelector('.slider__arrow--prev');
+      var next    = document.querySelector('.slider__arrow--next');
+      var current = 0;
+      var timer   = null;
+
+      function activate(index) {
+        slides[current].classList.remove('is-active');
+        dots[current].classList.remove('is-active');
+        dots[current].setAttribute('aria-selected', 'false');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+        dots[current].setAttribute('aria-selected', 'true');
+      }
+
+      function startAuto() {
+        timer = setInterval(function () { activate(current + 1); }, 5000);
+      }
+
+      function resetAuto() {
+        clearInterval(timer);
+        startAuto();
+      }
+
+      prev && prev.addEventListener('click', function () { activate(current - 1); resetAuto(); });
+      next && next.addEventListener('click', function () { activate(current + 1); resetAuto(); });
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { activate(i); resetAuto(); });
+      });
+
+      /* Keyboard nav inside slider */
+      var sliderEl = document.querySelector('.slider');
+      sliderEl && sliderEl.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  { activate(current - 1); resetAuto(); }
+        if (e.key === 'ArrowRight') { activate(current + 1); resetAuto(); }
+      });
+
+      /* Pause on hover */
+      sliderEl && sliderEl.addEventListener('mouseenter', function () { clearInterval(timer); });
+      sliderEl && sliderEl.addEventListener('mouseleave', startAuto);
+
+      startAuto();
+    }());
+
+    /* ── MOBILE MENU ─────────────────────────────────── */
+    (function () {
+      var btn = document.querySelector('.hamburger');
+      var nav = document.getElementById('nav-mobile');
+      if (!btn || !nav) return;
+
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('is-open', !open);
+      });
+
+      nav.querySelectorAll('.nav-mobile__link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          btn.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('is-open');
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !nav.contains(e.target)) {
+          btn.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('is-open');
+        }
+      });
+    }());
+
+    /* ── SCROLL REVEAL ───────────────────────────────── */
+    (function () {
+      var items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      items.forEach(function (el) { io.observe(el); });
+    }());
+
+    /* ── ILUSTRAÇÕES GERADAS ─────────────────────────── */
+    (function () {
+
+      /* Paleta de gradientes */
+      var G = [
+        ['#001A5C','#0080FF'], ['#0A0A50','#005CC8'],
+        ['#02022A','#0050B0'], ['#0C1850','#0070D8'],
+        ['#04041E','#004898'], ['#080840','#0068C8'],
+        ['#000820','#003070'], ['#0A0A50','#0090FF']
+      ];
+
+      /* Ícones musicais em SVG path */
+      function icon(type, c) {
+        switch (type) {
+          case 'note':
+            return '<ellipse cx="82" cy="145" rx="22" ry="15" fill="'+c+'" transform="rotate(-15 82 145)"/>'
+                 + '<rect x="102" y="68" width="9" height="79" fill="'+c+'" rx="4"/>'
+                 + '<rect x="102" y="68" width="42" height="9" fill="'+c+'" rx="4"/>'
+                 + '<ellipse cx="136" cy="130" rx="22" ry="15" fill="'+c+'" transform="rotate(-15 136 130)"/>'
+                 + '<rect x="156" y="53" width="9" height="79" fill="'+c+'" rx="4"/>';
+          case 'wave':
+            return [[16,116,13,68],[33,96,13,88],[50,74,13,112],[67,86,13,98],
+                    [84,66,13,118],[101,78,13,102],[118,92,13,78],[135,106,13,52]]
+              .map(function(b){
+                return '<rect x="'+b[0]+'" y="'+b[1]+'" width="'+b[2]+'" height="'+b[3]+'" rx="6" fill="'+c+'"/>';
+              }).join('');
+          case 'vinyl':
+            return '<circle cx="100" cy="100" r="82" fill="rgba(0,0,0,.28)"/>'
+                 + '<circle cx="100" cy="100" r="82" fill="none" stroke="'+c+'" stroke-width="1.5" stroke-dasharray="5 10"/>'
+                 + '<circle cx="100" cy="100" r="60" fill="rgba(0,0,0,.2)"/>'
+                 + '<circle cx="100" cy="100" r="60" fill="none" stroke="'+c+'" stroke-width="1" stroke-dasharray="3 8"/>'
+                 + '<circle cx="100" cy="100" r="28" fill="'+c+'" opacity=".35"/>'
+                 + '<circle cx="100" cy="100" r="10" fill="'+c+'"/>'
+                 + '<line x1="100" y1="100" x2="162" y2="48" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>';
+          case 'mic':
+            return '<rect x="72" y="34" width="56" height="95" rx="28" fill="'+c+'"/>'
+                 + '<line x1="78" y1="80" x2="122" y2="80" stroke="rgba(0,0,0,.18)" stroke-width="3"/>'
+                 + '<line x1="74" y1="96" x2="126" y2="96" stroke="rgba(0,0,0,.18)" stroke-width="3"/>'
+                 + '<line x1="78" y1="112" x2="122" y2="112" stroke="rgba(0,0,0,.18)" stroke-width="3"/>'
+                 + '<path d="M44 122 a56 56 0 0 0 112 0" fill="none" stroke="'+c+'" stroke-width="10" stroke-linecap="round"/>'
+                 + '<line x1="100" y1="178" x2="100" y2="196" stroke="'+c+'" stroke-width="10" stroke-linecap="round"/>'
+                 + '<line x1="68" y1="196" x2="132" y2="196" stroke="'+c+'" stroke-width="10" stroke-linecap="round"/>';
+          case 'guitar':
+            return '<ellipse cx="100" cy="142" rx="46" ry="52" fill="none" stroke="'+c+'" stroke-width="5"/>'
+                 + '<ellipse cx="100" cy="142" rx="22" ry="28" fill="rgba(0,0,0,.3)"/>'
+                 + '<circle cx="100" cy="142" r="8" fill="'+c+'"/>'
+                 + '<rect x="96" y="16" width="8" height="86" rx="4" fill="'+c+'"/>'
+                 + '<rect x="74" y="14" width="52" height="24" rx="10" fill="none" stroke="'+c+'" stroke-width="4"/>'
+                 + '<line x1="82" y1="14" x2="82" y2="38" stroke="'+c+'" stroke-width="3"/>'
+                 + '<line x1="94" y1="14" x2="94" y2="38" stroke="'+c+'" stroke-width="3"/>'
+                 + '<line x1="106" y1="14" x2="106" y2="38" stroke="'+c+'" stroke-width="3"/>'
+                 + '<line x1="118" y1="14" x2="118" y2="38" stroke="'+c+'" stroke-width="3"/>';
+          case 'headphones':
+            return '<path d="M36 112 a64 64 0 1 1 128 0" fill="none" stroke="'+c+'" stroke-width="12" stroke-linecap="round"/>'
+                 + '<rect x="20" y="106" width="30" height="52" rx="14" fill="'+c+'"/>'
+                 + '<rect x="150" y="106" width="30" height="52" rx="14" fill="'+c+'"/>';
+          case 'heart':
+            return '<path d="M100 162 C50 128 16 106 16 72 a44 44 0 0 1 84-10 a44 44 0 0 1 84 10 c0 34-34 56-84 90z" fill="'+c+'"/>'
+                 + '<text x="80" y="100" font-size="36" font-family="serif" fill="rgba(0,0,0,.25)">&#9834;</text>';
+          case 'star':
+            return '<polygon points="100,14 116,70 174,70 128,106 146,162 100,126 54,162 72,106 26,70 84,70" fill="'+c+'"/>'
+                 + '<polygon points="100,44 112,74 146,74 120,94 130,128 100,108 70,128 80,94 54,74 88,74" fill="rgba(0,0,0,.22)"/>';
+          default:
+            return '<circle cx="100" cy="100" r="60" fill="'+c+'" opacity=".5"/>';
+        }
+      }
+
+      var iconKeys = ['note','wave','vinyl','mic','guitar','headphones','heart','star'];
+
+      /* Monta SVG com gradiente + ícone */
+      function makeSVG(gIdx, iIdx, iconOpacity) {
+        var g   = G[gIdx % G.length];
+        var col = 'rgba(255,255,255,' + (iconOpacity || .6) + ')';
+        var uid = 'g' + (Math.random() * 1e8 | 0);
+        return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">'
+             + '<defs><linearGradient id="' + uid + '" x1="0" y1="0" x2="1" y2="1">'
+             + '<stop offset="0%" stop-color="' + g[0] + '"/>'
+             + '<stop offset="100%" stop-color="' + g[1] + '"/>'
+             + '</linearGradient></defs>'
+             + '<rect width="200" height="200" fill="url(#' + uid + ')"/>'
+             + icon(iconKeys[iIdx % iconKeys.length], col)
+             + '</svg>';
+      }
+
+      function toDataURI(svg) {
+        return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+      }
+
+      /* ── Capas dos cards e lançamentos ── */
+      document.querySelectorAll('.cover-ph').forEach(function (el, i) {
+        var svg = makeSVG(i, i, .58);
+        el.style.backgroundImage    = 'url("' + toDataURI(svg) + '")';
+        el.style.backgroundSize     = 'cover';
+        el.style.backgroundPosition = 'center';
+        el.textContent = '';
+      });
+
+      /* ── Ilustrações decorativas nos slides ── */
+      var slideTypes = ['vinyl', 'headphones', 'mic', 'guitar'];
+      document.querySelectorAll('.slide').forEach(function (slide, i) {
+        var col = 'rgba(255,255,255,1)';
+        var uid = 'sd' + (Math.random() * 1e8 | 0);
+        var svgStr = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">'
+                   + icon(slideTypes[i % slideTypes.length], col)
+                   + '</svg>';
+        var deco = document.createElement('div');
+        deco.className = 'slide__deco';
+        deco.setAttribute('aria-hidden', 'true');
+        deco.innerHTML = svgStr;
+        var container = slide.querySelector('.container');
+        if (container) slide.insertBefore(deco, container);
+      });
+
+      /* ── Avatar — adiciona ícone de fundo ── */
+      var avatar = document.querySelector('.about__avatar');
+      if (avatar) {
+        var bgSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">'
+                  + icon('mic', 'rgba(255,255,255,.18)')
+                  + '</svg>';
+        avatar.style.backgroundImage    = 'url("' + toDataURI(bgSVG) + '")';
+        avatar.style.backgroundSize     = '75%';
+        avatar.style.backgroundPosition = 'center';
+        avatar.style.backgroundRepeat   = 'no-repeat';
+      }
+
+    }());
+
+    /* ── HEADER SCROLL OPACITY ───────────────────────── */
+    (function () {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      window.addEventListener('scroll', function () {
+        header.style.background = window.scrollY > 60
+          ? 'rgba(6,6,51,.98)'
+          : 'rgba(6,6,51,.93)';
+      }, { passive: true });
+    }());
+
+    /* ── BACK TO TOP ─────────────────────────────────── */
+    (function () {
+      var btn = document.getElementById('back-to-top');
+      if (!btn) return;
+      window.addEventListener('scroll', function () {
+        btn.classList.toggle('is-visible', window.scrollY > 400);
+      }, { passive: true });
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }());
+
+    /* ── SPEED DIAL ──────────────────────────────────── */
+    (function () {
+      var toggle = document.getElementById('speed-dial-toggle');
+      var panel  = document.getElementById('speed-dial-panel');
+      if (!toggle || !panel) return;
+
+      function close() {
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+      }
+
+      toggle.addEventListener('click', function () {
+        var open = toggle.classList.contains('is-open');
+        if (open) {
+          close();
+        } else {
+          toggle.classList.add('is-open');
+          toggle.setAttribute('aria-expanded', 'true');
+          panel.classList.add('is-open');
+          panel.setAttribute('aria-hidden', 'false');
+        }
+      });
+
+      document.addEventListener('click', function (e) {
+        var dial = document.getElementById('speed-dial');
+        if (dial && !dial.contains(e.target)) { close(); }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { close(); }
+      });
+    }());
+
+    /* PARALAXE RITMOS: gerenciado via CSS background-attachment: fixed */
+  </script>
+
+</body>
+</html>
